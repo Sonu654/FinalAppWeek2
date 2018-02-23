@@ -84,6 +84,19 @@ export default class Details extends Component {
 }
 
 
+mapStateToProps=(state,props)=>{
+    return {
+
+    }
+}
+
+mapDispatchToProp=(dispatch)=>{
+    return{
+        
+    }
+}
+
+
 var styles = StyleSheet.create({
     activityIndicatorContainer: {
         backgroundColor: "#fff",

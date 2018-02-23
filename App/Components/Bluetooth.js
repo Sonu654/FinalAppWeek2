@@ -17,19 +17,7 @@ import * as myActions from '../Actions/dashAction';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 
-class Home extends Component {
-    constructor(props) {
-        super(props);
-        state = {
-            userName: ''
-        }
-        console.log(props);
-    }
-
-    componentDidMount() {
-        this.props.getDash();
-    }
-
+export default class Bluetooth extends Component {
     render() {
         if (this.props.loading) {
             return (
@@ -55,7 +43,7 @@ class Home extends Component {
                 }}
                 >
                     <View style={styles.header}>
-                        <Text style={{ fontSize: 28, color: '#fff', textAlign: 'center', padding: 15 }}>Dashbord</Text>
+                        <Text style={{ fontSize: 28, color: '#fff', textAlign: 'center', padding: 15 }}>Bluetooth</Text>
                     </View>
                     <View style={styles.container}>
                         <Text style={styles.welcome}>welcome</Text>
@@ -63,8 +51,8 @@ class Home extends Component {
                     </View>
                     <View style={styles.footer}>
                         <View style={styles.menuIcon}>
-                            <TouchableOpacity onPress={() => Actions.details()} style={styles.iconBtn}>
-                                <Text style={styles.buttonText}>Profile</Text>
+                            <TouchableOpacity onPress={() => Actions.home()} style={styles.iconBtn}>
+                                <Text style={styles.buttonText}>Home</Text>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.menuIcon}>
@@ -78,13 +66,13 @@ class Home extends Component {
                             </TouchableOpacity>
                         </View>
                         <View style={styles.menuIcon}>
-                            <TouchableOpacity onPress={() => Actions.blth()} style={styles.iconBtn}>
-                                <Text style={styles.buttonText}>Bluetooth</Text>
+                            <TouchableOpacity onPress={() => Actions.details()} style={styles.iconBtn}>
+                                <Text style={styles.buttonText}>Profile</Text>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.menuIcon}>
-                            <TouchableOpacity onPress={() => Actions.login()} style={styles.iconBtn}>
-                                <Text style={styles.buttonText}>Logout</Text>
+                            <TouchableOpacity onPress={() => Actions.pop()} style={styles.iconBtn}>
+                                <Text style={styles.buttonText}>Back</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -93,24 +81,6 @@ class Home extends Component {
         }
     }
 }
-
-
-mapStateToProps = (state, props) => {
-    console.log(state, props);
-    return {
-        userName: state.userReducer.data.FirstName + " " + state.userReducer.data.LastName,
-        loading: state.dashReducer.loading
-
-    }
-}
-
-
-mapDispatchToProps = (dispatch) => {
-    return bindActionCreators(myActions, dispatch);
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 
 var styles = StyleSheet.create({

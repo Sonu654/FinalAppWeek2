@@ -1,7 +1,7 @@
 import { Actions } from 'react-native-router-flux';
-const USER_LIST='GET_USER';
-const VALID_USER='VALID_USER';
-const INVALID_USER='INVALID_USER';
+export const USER_LIST='GET_USER';
+export const VALID_USER='VALID_USER';
+export const INVALID_USER='INVALID_USER';
 import data from '../Assets/JSON/users.json';
 
 
@@ -10,10 +10,10 @@ export function getUser(){
       setTimeout(()=>{
         //var data=data.users;
         console.log(data.users);
-        dispatch({type:USER_LIST,users:data.users});
+        dispatch({type:USER_LIST,payload:data.users});
       },2000);
     }
-  }
+}
 
 export function validUser(username,pass){
     return(dispatch)=>{
@@ -25,15 +25,24 @@ export function validUser(username,pass){
             if(users[user].userName==username && users[user].userPass==pass){
                 userData={
                     "userName": username,
-                    "FirstName":users[user].firstName,
-                    "LastName":users[user].lastName     
+                    "FirstName":users[user].FirstName,
+                    "LastName":users[user].LastName     
                 }; 
-                dispatch({type:VALID_USER, payload:userData}); 
-                Actions.home(); 
+              loginSuccess(dispatch);
+              break;
+            }else{
+                loginFailed(dispatch);
             }
         }
-        msg='Invalid User';
-        dispatch({type:INVALID_USER, payload:msg});
     }
 }
 
+export function loginSuccess(dispatch){
+    dispatch({type:VALID_USER, payload:userData}); 
+    Actions.home(); 
+}
+
+export function loginFailed(dispatch){
+    let msg='Invalid User';
+    dispatch({type:INVALID_USER, payload:msg});
+}

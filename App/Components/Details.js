@@ -18,7 +18,13 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 
 export default class Details extends Component {
+    constructor(props) {
+        super(props);
+        console.log("Details : " + props);
+    }
+
     render() {
+
         if (this.props.loading) {
             return (
                 <View style={styles.ActivityIndicatorContainer}>
@@ -46,8 +52,14 @@ export default class Details extends Component {
                         <Text style={{ fontSize: 28, color: '#fff', textAlign: 'center', padding: 15 }}>Profile</Text>
                     </View>
                     <View style={styles.container}>
-                        <Text style={styles.welcome}>Name: {this.props.userName}</Text>
-                        <Text style={styles.userName}>{this.props.userName}</Text>
+                        <View style={styles.profileImg}>
+                            <Image resizeMode="contain" style={styles.logo} source={require('../Assets/Images/logo.png')} />
+                        </View>
+                        <View style={styles.profileData}>
+                            <Text style={styles.welcome}>User Name: {this.props.userName}</Text>
+                            <Text style={styles.welcome}>User First Name: {this.props.FirstName}</Text>
+                            <Text style={styles.welcome}>User Last Name: {this.props.LastName}</Text>
+                        </View>
                     </View>
                     <View style={styles.footer}>
                         <View style={styles.menuIcon}>
@@ -84,15 +96,15 @@ export default class Details extends Component {
 }
 
 
-mapStateToProps=(state,props)=>{
+mapStateToProps = (state, props) => {
     return {
 
     }
 }
 
-mapDispatchToProp=(dispatch)=>{
-    return{
-        
+mapDispatchToProp = (dispatch) => {
+    return {
+
     }
 }
 
@@ -119,8 +131,23 @@ var styles = StyleSheet.create({
     },
     welcome: {
         textAlign: 'center',
-        fontSize: 32,
+        fontSize: 18,
         fontWeight: 'bold'
+    },
+    profileImg:{
+        flex:0.7,
+        marginTop:40,
+        width:200,
+        marginBottom:30,
+        alignItems:'center',
+        justifyContent: 'space-between',
+        borderWidth:1,
+        borderColor:'black',
+        borderRadius:30,
+        marginLeft:80
+    },
+    profileData:{
+        flex:0.3,
     },
     buttonContainerReg: {
         backgroundColor: '#c0392b',
@@ -144,5 +171,10 @@ var styles = StyleSheet.create({
     },
     iconBtn: {
         paddingVertical: 15
+    },
+    logo: {
+        position: 'absolute',
+        width:200
+
     }
 });

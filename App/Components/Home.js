@@ -59,11 +59,11 @@ class Home extends Component {
                     </View>
                     <View style={styles.container}>
                         <Text style={styles.welcome}>welcome</Text>
-                        <Text style={styles.userName}>{this.props.userName}</Text>
+                        <Text style={styles.userName}>{this.props.user.FirstName} {this.props.user.LastName}</Text>
                     </View>
                     <View style={styles.footer}>
                         <View style={styles.menuIcon}>
-                            <TouchableOpacity onPress={() => Actions.details()} style={styles.iconBtn}>
+                            <TouchableOpacity onPress={() => Actions.details(this.props.user)} style={styles.iconBtn}>
                                 <Text style={styles.buttonText}>Profile</Text>
                             </TouchableOpacity>
                         </View>
@@ -98,7 +98,7 @@ class Home extends Component {
 mapStateToProps = (state, props) => {
     console.log(state, props);
     return {
-        userName: state.userReducer.data.FirstName + " " + state.userReducer.data.LastName,
+        user: state.userReducer.data,
         loading: state.dashReducer.loading
 
     }

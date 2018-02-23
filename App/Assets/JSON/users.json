@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "userID": "u01",
+      "userName": "Sonu65",
+      "userPass":"Welcome",
+      "FirstName":"Suraj",
+      "LastName":"Sanwal"
+    },
+    {
+      "userID": "u02",
+      "userName": "Sandeep5",
+      "userPass":"Welcome123",
+      "FirstName":"Sandeep",
+      "LastName":"Rangwal"
+    }
+  ]
+}

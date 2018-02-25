@@ -13,3 +13,4 @@ export function getDash(){
       },2000);
     }
 }
+

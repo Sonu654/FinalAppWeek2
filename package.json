@@ -1,5 +1,5 @@
 {
-  "name": "FinalAppWeek2",
+  "name": "MyTask",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,10 +7,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "eslint": "^4.18.1",
     "react": "16.2.0",
     "react-native": "0.53.3",
-    "react-native-camera": "^1.0.1",
     "react-native-keyboard-aware-scroll-view": "^0.4.4",
     "react-native-router-flux": "^4.0.0-beta.28",
     "react-redux": "^5.0.7",
@@ -18,9 +16,9 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
-    "babel-jest": "22.4.0",
+    "babel-jest": "22.4.1",
     "babel-preset-react-native": "4.0.0",
-    "jest": "22.4.0",
+    "jest": "22.4.2",
     "react-test-renderer": "16.2.0"
   },
   "jest": {

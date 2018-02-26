@@ -14,18 +14,19 @@ import {
   Actions,
   ActionConst,
 } from 'react-native-router-flux';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import iconSet from '/Users/suraj.sanwal/Desktop/react_native/FinalAppWeek2/week_3/node_modules/react-native-vector-icons/FontAwesome.js';
 
 import Launch from './components/pages/Launch';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import NavigationDrawer from './components/pages/NavigationDrawer';
 
-import TabView from './components/pages/TabpwView';
+import TabView from './components/pages/TabView';
 import MapView from './components/pages/MapView';
 import SearchView from './components/pages/SearchView';
 import ProfileView from './components/pages/ProfileView';
 import MoreView from './components/pages/MoreView';
+
 
 const MENU_ICON = require('./components/img/menu.png');
 const SETTINGS_ICON = require('./components/img/settings.png');

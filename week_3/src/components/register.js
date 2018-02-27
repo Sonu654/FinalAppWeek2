@@ -3,6 +3,7 @@ import { View, Text, TextInput, Dimensions, Platform, StyleSheet, TouchableOpaci
 import {Actions} from 'react-native-router-flux';
 import REGISTER_ICON from '../assets/images/company.png';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+let { height, width } = Dimensions.get('window');
 class Register extends Component {
     constructor(props) {
         super(props);
@@ -74,11 +75,11 @@ const styles = StyleSheet.create({
         fontSize: 16
     },
     carouselImage: {
-        width: 120,
+        width: width/2,
         height: 150,
         resizeMode: 'contain',
-        marginLeft: 120,
+        marginLeft:width/4,
         borderRadius: 80,
-        marginTop: 20
+        marginTop: 40
     },
 });

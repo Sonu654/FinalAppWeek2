@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import Carousel from 'react-native-carousel';
 import CAROUSEL_IMAGE_1 from '../assets/images/carousel1.png';
-import { View, Text, StyleSheet, Image, Dimensions, Button, TouchableOpacity } from "react-native";
+import { View, Text,Platform, StyleSheet, Image, Dimensions, Button, TouchableOpacity } from "react-native";
 import { Actions } from "react-native-router-flux";
 let { height, width } = Dimensions.get('window');
 
 export default class Launch extends Component {
+    constructor(props){
+        super(props);
+        console.log("height :",height," Width : ",width);
+    }
     render() {
         return (
-            <View style={{ flex: 1, flexDirection: "column" }}>
-                <Carousel width={375}
+            <View style={{ flex: 1, flexDirection: "column", marginTop:Platform.OS=='ios'?20:0 }}>
+                <Carousel width={width}
                     animate={false}
                     indicatorSize={20}
                     indicatorColor="#4A7EFF"
@@ -23,7 +27,7 @@ export default class Launch extends Component {
                     <View style={styles.container}>
                         <Image source={CAROUSEL_IMAGE_1} style={styles.carouselImage} />
                     </View>
-                    <View style={styles.container_1}>
+                    <View style={styles.container}>
                         <Image source={CAROUSEL_IMAGE_1} style={styles.carouselImage} />
                     </View>
                 </Carousel>
@@ -45,14 +49,13 @@ export default class Launch extends Component {
                 </View>
                 <View style={{
                     flex: 0.1,
-                    height: 40,
                     flexDirection:
                         "row",
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
                     <Text style={styles.bottomText}>
-                        dhasjkdgasjkd fdsgds  dfdsf
+                        Dummy data
                     </Text>
                 </View>
             </View>
@@ -63,16 +66,17 @@ export default class Launch extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        width: 375,
-        flex: 0.7,
+        width: width,
+        height:height,
         justifyContent: 'flex-start',
         alignItems: 'center',
         backgroundColor: '#fff',
+        marginTop:-100,
     },
     carouselImage: {
         width: width,
-        height: height,
-        resizeMode:'contain'
+       flex:1,
+        resizeMode: 'contain'
     },
     wrapperReg: {
         backgroundColor: '#34A873',
@@ -91,17 +95,17 @@ const styles = StyleSheet.create({
         height: 40
     },
     registerButtonText: {
-        padding:10,
-        textAlign:'center',
+        padding: 10,
+        textAlign: 'center',
         color: "#fff"
     },
     loginButtonText: {
-        textAlign:'center',
+        textAlign: 'center',
         color: "#4A7EFF",
-        padding:10,
+        padding: 10,
     },
     bottomText: {
-        textAlign:'center',
+        textAlign: 'center',
         color: "#4A7EFF",
         fontSize: 16
     }

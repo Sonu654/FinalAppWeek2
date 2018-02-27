@@ -33,3 +33,10 @@ export default class App extends Component {
         );
     }
 }
+
+/* 
+    https://marvelapp.com/explore/277258/roomr-creating-a-home-profile/   //sanwal.suraj12 suraj12345
+    https://reactnativejantrainee.slack.com/messages/C97KLH6CA/  id:suraj.sanwal@smartdatainc.net pwd:suraj12345
+
+
+*/

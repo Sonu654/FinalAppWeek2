@@ -143,7 +143,6 @@ var styles = StyleSheet.create({
     row: {
         borderBottomWidth: 1,
         borderColor: "#ccc",
-        // height: 50,
         padding: 10
     },
 
